@@ -51,4 +51,64 @@ public class AddressBookImplementation implements AddressBookInterface{
 		return person;
 	}
 
+	/*Editing information of existing Person from list */
+	static int count = 0;
+	public void editPerson() {
+		System.out.println("\n\t\t\tEnter phone Number of the Peson whose details you want to edit");
+		String phoneNumber = use.inputString();
+		for (Person P : list) {
+			if (phoneNumber.equals(P.getPhoneNumber())) {
+				count++;
+				System.out.println("\n\t\t\tData found\n");
+				System.out.println("\t\t\t1.To edit Firstname and lastname\n\t\t\t2.To edit city,State and zip\n" +"\t\t\t3. To edit Phone Number\n");
+				int editChoice = use.inputInteger();
+				switch (editChoice) {
+				case 1:
+					editAddressBookPerson(P, 1);
+					break;
+				case 2:
+					editAddressBookPerson(P, 2);
+					break;
+				case 3:
+					editAddressBookPerson(P, 3);
+					break;
+				default:
+					System.out.println("\t\t\tSomething went wrong\n" + "\t\t\tTry again later");
+				}
+			} 
+		} 
+		if(count==0)
+			System.out.println("\n\t\t\tData not found");	
+	}
+
+	/*Editing of Firstname, lastname, state, city, zip  and phone number
+	 *  P is the person object
+	 *  i is the case for editing address or phone number*/
+	private void editAddressBookPerson(Person P, int i) {
+		switch (i) {
+		case 1:
+			System.out.println("\n\t\t\tEnter the FirstName");
+			P.setFirstName(use.inputString());
+			System.out.println("\n\t\t\tEnter the LastName");
+			P.setLastName(use.inputString());
+			System.out.println("\n\t\t\tNew Firstname and Lastname are updated");
+			break;
+		case 2:
+			System.out.println("\n\t\t\tEnter the state");
+			P.setState(use.inputString());
+			System.out.println("\n\t\t\tEnter the city");
+			P.setCity(use.inputString());
+			System.out.println("\n\t\t\tEnter the ZipCode");
+			P.setZip(use.inputInteger());
+			System.out.println("\n\t\t\tNew city,State and zip are updated");
+			break;
+		case 3:
+			System.out.println("\n\t\t\tEnter the new Phone Number");
+			String phoneNumber = use.inputString();
+			P.setPhoneNumber(phoneNumber);
+			System.out.println("\n\t\t\tNew Phone Number updated ");
+			break;
+		}
+	}
+
 }
