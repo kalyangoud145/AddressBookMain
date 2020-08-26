@@ -130,4 +130,32 @@ public class AddressBookImplementation implements AddressBookInterface{
 			System.out.println("\n\t\t\tSorry, no such person is  found in the address book");
 	}	
 
+	/*Sorting of list respect to zip*/
+	public void sortByZip() {
+		Collections.sort(list, new SortByZip());
+		for (Person person : list) {
+			System.out.println(person.toString());
+		}	
+	}
+
+	public class SortByZip implements Comparator<Person> {
+	/* 
+	 * Compares the data and returns 0 if the  data is same 
+	 * and 1 if first data is greater
+	 * and -1 if second data is greater
+	 */
+	@Override
+		public int compare(Person p1, Person p2) {
+			if(p1.getZip()==p2.getZip())
+				return 0;
+			else {
+				if(p1.getZip()>p2.getZip()) {
+					return 1;
+				}else {
+					return -1;
+				}
+			}
+		}
+	}
+
 }
