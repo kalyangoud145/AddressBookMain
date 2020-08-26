@@ -41,6 +41,13 @@ public  class AddressBookManagerImplementation implements AddressBookManagerInte
 		ab.saveAsAddressBook();
 	}
 
+	/*Calls closeAddressBook method in AddressBookImplementation class with the
+	 *  name of file whose list is to be cleared if new address book is being opened*/
+	public void closeAddressBook(String existingAddressBook) {
+		AddressBookImplementation ab = new AddressBookImplementation();
+		ab.closeAddressBook(existingAddressBook);
+	}
+
 	/*Checks total number of files present and displays the file names*/
 	public void readAddress() {
 		File f = new File("AddressBook/");
