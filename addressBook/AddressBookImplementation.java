@@ -215,4 +215,9 @@ public class AddressBookImplementation implements AddressBookInterface{
 		System.out.println("\n\t\t\tData saved in new file");
 	}
 
+	/*clears the list from previous address book if new address book is opened*/
+	public void closeAddressBook(String existingAddressBook) {
+		list.clear();
+	}
+
 }
