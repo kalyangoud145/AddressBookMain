@@ -111,4 +111,23 @@ public class AddressBookImplementation implements AddressBookInterface{
 		}
 	}
 
+	/*To search if the person is present or not, using phoneNumber of the person as search parameter*/
+	public void searchPerson() {
+		System.out.println("\n\t\t\tEnter the phoneNumber of the person to be searched");
+		String phoneNumber = use.inputString();
+		int count = 0;
+		List<Person> toSearch = new ArrayList<>();
+		for (Person P : list) {
+			if (phoneNumber.equals(P.getPhoneNumber())) {
+				System.out.println("\n\t\t\tPerson found");
+				toSearch.add(P);
+				count++;
+				System.out.println(toSearch);
+			}
+		}
+		
+		if (count == 0)
+			System.out.println("\n\t\t\tSorry, no such person is  found in the address book");
+	}	
+
 }
