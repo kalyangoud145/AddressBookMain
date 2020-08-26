@@ -207,4 +207,12 @@ public class AddressBookImplementation implements AddressBookInterface{
 		}
 	}
 
+	/*Saves the person list in a different file*/
+	public void saveAsAddressBook() {
+		System.out.println("\n\t\t\tEnter the name of the new file");
+		String fileNameNew = use.inputString();
+		saveAddressBook(fileNameNew);
+		System.out.println("\n\t\t\tData saved in new file");
+	}
+
 }
