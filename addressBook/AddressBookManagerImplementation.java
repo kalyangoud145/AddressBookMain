@@ -34,6 +34,13 @@ public  class AddressBookManagerImplementation implements AddressBookManagerInte
 		ab.saveAddressBook(file);
 	}
 
+	/*Calls saveAsAddressBook method in AddressBookImplementation class with the name of 
+	 * file in which data is to be saved*/
+	public void saveAsAddressBook() {
+		AddressBookImplementation ab = new AddressBookImplementation();
+		ab.saveAsAddressBook();
+	}
+
 	/*Checks total number of files present and displays the file names*/
 	public void readAddress() {
 		File f = new File("AddressBook/");
