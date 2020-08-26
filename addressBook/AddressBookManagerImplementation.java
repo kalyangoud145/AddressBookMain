@@ -17,6 +17,14 @@ public  class AddressBookManagerImplementation implements AddressBookManagerInte
 			System.out.println("\n\t\t\tFile already exists.");
 		}
 		
+	}
+
+	/* calls read method in the AddressBookImplementationto to open the addressbook 
+	 * in the file*/
+	@Override
+	public void openAddressBook(String existingAddressBook)throws Exception {
+		AddressBookImplementation ab = new AddressBookImplementation();
+		ab.read(existingAddressBook);
 	}	
 	
 }
