@@ -25,6 +25,20 @@ public  class AddressBookManagerImplementation implements AddressBookManagerInte
 	public void openAddressBook(String existingAddressBook)throws Exception {
 		AddressBookImplementation ab = new AddressBookImplementation();
 		ab.read(existingAddressBook);
+	}
+
+	/*Checks total number of files present and displays the file names*/
+	public void readAddress() {
+		File f = new File("AddressBook/");
+		int count = 0;
+		for (File file : f.listFiles()) {
+			if (file.isFile()) {
+				System.out.println("\n\t\t\t"+file.getName());
+				count++;
+			}
+		}
+		System.out.println("\n\t\t\tNumber of files: " + count);
+		
 	}	
 	
 }
