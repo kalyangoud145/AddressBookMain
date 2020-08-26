@@ -186,4 +186,11 @@ public class AddressBookImplementation implements AddressBookInterface{
 			}
 	}
 
+	/*Displaying the list*/
+	public void display() {
+		for (Person P : list) {
+			System.out.println(P.toString());
+		}
+	}
+
 }
