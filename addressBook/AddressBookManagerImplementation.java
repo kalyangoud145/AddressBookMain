@@ -48,6 +48,12 @@ public  class AddressBookManagerImplementation implements AddressBookManagerInte
 		ab.closeAddressBook(existingAddressBook);
 	}
 
+	/* Close the entire address book*/
+	@Override
+	public void quit() {
+		System.exit(0);
+	}
+
 	/*Checks total number of files present and displays the file names*/
 	public void readAddress() {
 		File f = new File("AddressBook/");
