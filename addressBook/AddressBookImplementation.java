@@ -238,4 +238,22 @@ public class AddressBookImplementation implements AddressBookInterface{
 		if (count == 0)
 			System.out.println("\n\t\t\tSorry, no such data found");
 	}
+
+	/*Reading file from file existingAddressBook is the name of File from which 
+	 * data is to read and  throws Exception for file not found*/
+	public void read(String existingAddressBook) throws Exception {
+		ObjectMapper objectMapper = new ObjectMapper();
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader("AddressBook/" + existingAddressBook + ".json"));
+			String arrayToJson;
+			if ((arrayToJson = reader.readLine()) != null) {
+				TypeReference<ArrayList<Person>> type = new TypeReference<ArrayList<Person>>() {
+				};
+				list = objectMapper.readValue(arrayToJson, type);
+				reader.close();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }
