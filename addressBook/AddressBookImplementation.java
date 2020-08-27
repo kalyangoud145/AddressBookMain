@@ -196,7 +196,7 @@ public class AddressBookImplementation implements AddressBookInterface{
 	/*Saving list data in file */
 	public void saveAddressBook(String file) {
 		try {
-			mapper.writeValue(new File("AddressBook/" + file + ".json"), list);
+			mapper.writeValue(new File("AddressBookFolder/" + file + ".json"), list);
 			System.out.println("\n\t\t\tSaved");
 		} catch (JsonGenerationException e) {
 			e.printStackTrace();

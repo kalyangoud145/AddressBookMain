@@ -56,7 +56,7 @@ public  class AddressBookManagerImplementation implements AddressBookManagerInte
 
 	/*Checks total number of files present and displays the file names*/
 	public void readAddress() {
-		File f = new File("AddressBook/");
+		File f = new File("AddressBookFolder/");
 		int count = 0;
 		for (File file : f.listFiles()) {
 			if (file.isFile()) {
@@ -71,7 +71,7 @@ public  class AddressBookManagerImplementation implements AddressBookManagerInte
 	/*Checks whether the file is present or not existingAddressBook is the name of file 
 	 * to be checked return returns true if file is present or false if is not present*/
 	public boolean checkAddress(String existingAddressBook) {
-		File f = new File("AddressBook/");
+		File f = new File("AddressBookFolder/");
 		int count = 0;
 		for (File file : f.listFiles()) {
 			if (file.isFile()) {
